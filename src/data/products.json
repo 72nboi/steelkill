@@ -1,0 +1,222 @@
+{
+  "currency": "GBP",
+  "products": [
+    {
+      "id": "chunky-septum-spiky",
+      "name": "Chunky Septum Spiky",
+      "description": "A statement chain of interlocking steel rings, pointed spikes and a large septum-style centrepiece.",
+      "price": 120,
+      "category": "Necklaces",
+      "image": "/images/instagram/2025-11-24_DRbqsBKiMx1_8.jpg",
+      "images": [],
+      "featured": true,
+      "priceSource": "/images/instagram/2025-11-24_DRbqsBKiMx1_8.jpg"
+    },
+    {
+      "id": "spikes-and-skull",
+      "name": "Spikes & Skull Necklace",
+      "description": "Repeating skull details and sharp spikes linked into a striking silver-tone necklace.",
+      "price": 95,
+      "category": "Necklaces",
+      "image": "/images/instagram/2025-11-24_DRbqsBKiMx1_4.jpg",
+      "images": [],
+      "featured": true,
+      "priceSource": "/images/instagram/2025-11-24_DRbqsBKiMx1_4.jpg"
+    },
+    {
+      "id": "four-in-one-persian",
+      "name": "4 in 1 Persian Choker",
+      "description": "A wide Persian chainmail weave with a closely layered, sculptural profile.",
+      "price": 130,
+      "category": "Chokers",
+      "image": "/images/instagram/2025-03-24_DHkxirbscPF_1.jpg",
+      "images": [
+        "/images/instagram/2025-03-24_DHkxirbscPF_2.jpg",
+        "/images/instagram/2025-03-24_DHkxirbscPF_3.jpg",
+        "/images/instagram/2025-11-24_DRbqsBKiMx1_5.jpg"
+      ],
+      "featured": true,
+      "priceSource": "/images/instagram/2025-11-24_DRbqsBKiMx1_5.jpg"
+    },
+    {
+      "id": "soft-edges",
+      "name": "Soft Edges Choker",
+      "description": "Rounded clusters of steel rings form a softer silhouette with the same heavy-metal spirit.",
+      "price": 79,
+      "category": "Chokers",
+      "image": "/images/instagram/2025-03-23_DHiM2sSs27-_1.jpg",
+      "images": [
+        "/images/instagram/2025-03-23_DHiM2sSs27-_2.jpg",
+        "/images/instagram/2025-03-23_DHiM2sSs27-_3.jpg",
+        "/images/instagram/2025-11-24_DRbqsBKiMx1_7.jpg"
+      ],
+      "featured": true,
+      "priceSource": "/images/instagram/2025-11-24_DRbqsBKiMx1_7.jpg"
+    },
+    {
+      "id": "fox-spine-necklace",
+      "name": "Fox Spine Necklace",
+      "description": "A dense woven chain with a real fox vertebra pendant and a single spike suspended beneath it.",
+      "price": 120,
+      "category": "Bone pieces",
+      "image": "/images/instagram/2025-11-21_DRU46SNDICN_2.jpg",
+      "images": [],
+      "featured": false,
+      "priceSource": "/images/instagram/2025-11-21_DRU46SNDICN_2.jpg"
+    },
+    {
+      "id": "fox-vertebra-choker",
+      "name": "Fox Vertebra Choker",
+      "description": "A close chainmail weave finished with a single real fox vertebra at the centre.",
+      "price": 89,
+      "category": "Bone pieces",
+      "image": "/images/instagram/2025-11-21_DRU46SNDICN_3.jpg",
+      "images": [],
+      "featured": false,
+      "priceSource": "/images/instagram/2025-11-21_DRU46SNDICN_3.jpg"
+    },
+    {
+      "id": "double-fox-spine",
+      "name": "Double Fox Spine Choker",
+      "description": "Two real fox vertebrae frame a central steel ring and a hanging spike.",
+      "price": 100,
+      "category": "Bone pieces",
+      "image": "/images/instagram/2025-11-24_DRcOy0TDArH.jpg",
+      "images": [
+        "/images/instagram/2025-11-21_DRU46SNDICN_4.jpg"
+      ],
+      "featured": true,
+      "priceSource": "/images/instagram/2025-11-21_DRU46SNDICN_4.jpg",
+      "editorNote": "Descriptive display name; replace with the official product name if different."
+    },
+    {
+      "id": "spiked-fox-spine",
+      "name": "Spiked Fox Spine Necklace",
+      "description": "Spiked links lead to a real fox vertebra pendant: bone and metal in a bold, angular silhouette.",
+      "price": 130,
+      "category": "Bone pieces",
+      "image": "/images/instagram/2025-11-21_DRU46SNDICN_5.jpg",
+      "images": [
+        "/images/instagram/2026-05-13_DYSYQ9JjeiG_4.jpg"
+      ],
+      "featured": false,
+      "priceSource": "/images/instagram/2025-11-21_DRU46SNDICN_5.jpg"
+    },
+    {
+      "id": "mink-skull",
+      "name": "Mink Skull Necklace",
+      "description": "A real mink skull pendant suspended from a slim steel chain.",
+      "price": 79,
+      "category": "Bone pieces",
+      "image": "/images/instagram/2025-11-21_DRU46SNDICN_6.jpg",
+      "images": [],
+      "featured": false,
+      "priceSource": "/images/instagram/2025-11-21_DRU46SNDICN_6.jpg"
+    },
+    {
+      "id": "fox-spine-pendant",
+      "name": "Fox Spine Pendant Necklace",
+      "description": "A real fox vertebra on a fine chain, finished with an articulated ring and long spike.",
+      "price": 69,
+      "category": "Bone pieces",
+      "image": "/images/instagram/2025-11-21_DRU46SNDICN_7.jpg",
+      "images": [],
+      "featured": false,
+      "priceSource": "/images/instagram/2025-11-21_DRU46SNDICN_7.jpg"
+    },
+    {
+      "id": "triple-fox-spine",
+      "name": "Triple Fox Spine Choker",
+      "description": "A chainmail collar with two vertebrae, a draped chain and a third bone at its centre.",
+      "price": 120,
+      "category": "Bone pieces",
+      "image": "/images/instagram/2025-11-21_DRU46SNDICN_8.jpg",
+      "images": [],
+      "featured": false,
+      "priceSource": "/images/instagram/2025-11-21_DRU46SNDICN_8.jpg",
+      "editorNote": "Descriptive display name; replace with the official product name if different."
+    },
+    {
+      "id": "blended-gold",
+      "name": "Blended Gold Necklace",
+      "description": "A broad mesh of interlocked rings blends silver and gold tones into a dramatic statement collar.",
+      "price": 185,
+      "category": "Necklaces",
+      "image": "/images/instagram/2025-11-24_DRbqsBKiMx1_2.jpg",
+      "images": [],
+      "featured": false,
+      "priceSource": "/images/instagram/2025-11-24_DRbqsBKiMx1_2.jpg"
+    },
+    {
+      "id": "ozzy-forever",
+      "name": "Ozzy Forever Necklace",
+      "description": "A layered woven chain, spiked ring details and a portrait heart pendant.",
+      "price": 110,
+      "category": "Necklaces",
+      "image": "/images/instagram/2025-11-24_DRbqsBKiMx1_3.jpg",
+      "images": [],
+      "featured": false,
+      "priceSource": "/images/instagram/2025-11-24_DRbqsBKiMx1_3.jpg"
+    },
+    {
+      "id": "spiked-cross",
+      "name": "Spiked Cross Necklace",
+      "description": "A woven chain meets clustered rings and a cross-shaped pendant, finished with pointed details.",
+      "price": 79,
+      "category": "Necklaces",
+      "image": "/images/instagram/2025-11-24_DRbqsBKiMx1_6.jpg",
+      "images": [],
+      "featured": false,
+      "priceSource": "/images/instagram/2025-11-24_DRbqsBKiMx1_6.jpg",
+      "editorNote": "Descriptive display name; replace with the official product name if different."
+    },
+    {
+      "id": "spiked-chainmail-bracelet",
+      "name": "Spiked Chainmail Bracelet",
+      "description": "Clusters of interlocked rings with alternating spikes for a sharp, textured wrist piece.",
+      "price": 55,
+      "category": "Bracelets",
+      "image": "/images/instagram/2025-11-29_DRqH7IyjCdI_2.jpg",
+      "images": [],
+      "featured": true,
+      "priceSource": "/images/instagram/2025-11-29_DRqH7IyjCdI_2.jpg",
+      "editorNote": "Descriptive display name; replace with the official product name if different."
+    },
+    {
+      "id": "persian-weave-bracelet",
+      "name": "Persian Weave Bracelet",
+      "description": "A substantial, close-woven silver-tone bracelet with a lobster clasp and extension chain.",
+      "price": 39,
+      "category": "Bracelets",
+      "image": "/images/instagram/2025-11-29_DRqH7IyjCdI_3.jpg",
+      "images": [],
+      "featured": false,
+      "priceSource": "/images/instagram/2025-11-29_DRqH7IyjCdI_3.jpg",
+      "editorNote": "Descriptive display name; replace with the official product name if different."
+    },
+    {
+      "id": "gold-persian-bracelet",
+      "name": "Gold Persian Weave Bracelet",
+      "description": "A rich gold-tone chainmail weave, finished with an extension chain and small spike charm.",
+      "price": null,
+      "category": "Bracelets",
+      "image": "/images/instagram/2025-11-29_DRqH7IyjCdI_4.jpg",
+      "images": [],
+      "featured": false,
+      "priceSource": "/images/instagram/2025-11-29_DRqH7IyjCdI_4.jpg",
+      "editorNote": "Source photo shows £65 in text and £45 on tag. Confirm current price before setting a number."
+    },
+    {
+      "id": "gold-orbit-bracelet",
+      "name": "Gold Orbit Bracelet",
+      "description": "Open silver-tone rings accented by gold-tone beads, with a lobster clasp and extension chain.",
+      "price": 55,
+      "category": "Bracelets",
+      "image": "/images/instagram/2025-11-29_DRqH7IyjCdI_5.jpg",
+      "images": [],
+      "featured": false,
+      "priceSource": "/images/instagram/2025-11-29_DRqH7IyjCdI_5.jpg",
+      "editorNote": "Descriptive display name; replace with the official product name if different."
+    }
+  ]
+}

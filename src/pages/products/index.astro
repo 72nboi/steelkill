@@ -1,0 +1,19 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import { categories, products } from '../../lib/catalog';
+---
+<Layout title="The collection" description="Explore SteelKill chainmail necklaces, chokers, bracelets and bone jewellery. Browse the collection with prices in British pounds.">
+  <section class="catalogue-head section" id="top"><p class="eyebrow">HANDMADE / INTERLOCKED / INDIVIDUAL</p><h1>The <em>collection.</em></h1><div class="catalogue-intro"><p>Find your piece of the unconventional.</p><span>GBP (£) · Shipping confirmed on enquiry</span></div></section>
+  <section class="catalogue section" aria-label="Product catalogue">
+    <div class="catalogue-tools" data-catalogue-tools hidden>
+      <div class="category-filters" role="group" aria-label="Filter products by category"><button type="button" data-category-filter="all" aria-pressed="true">All pieces <span>{products.length}</span></button>{categories.map(category => <button type="button" data-category-filter={category} aria-pressed="false">{category}</button>)}</div>
+      <div class="search-sort"><div class="search-wrap"><label for="product-search" class="sr-only">Search the collection</label><input type="search" id="product-search" placeholder="Search the collection" autocomplete="off"/></div><div><label for="product-sort" class="sr-only">Sort products</label><select id="product-sort"><option value="featured">Featured first</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option><option value="name">Name: A to Z</option></select></div></div>
+    </div>
+    <div class="results-line"><p id="product-count" role="status" aria-live="polite">{products.length} pieces</p><button type="button" class="text-button" id="clear-filters" hidden>Clear filters</button></div>
+    <div class="product-grid" id="product-grid">{[...products].sort((a,b) => Number(!!b.featured) - Number(!!a.featured)).map(product => <ProductCard product={product}/>)}</div>
+    <div id="no-results" class="empty-state" hidden><h2>Nothing in this weave.</h2><p>Try another name or category to find your piece.</p><button class="button button-outline" id="reset-search" type="button">Show all pieces</button></div>
+    <p class="catalogue-note">See something you love? Open a piece to view the details and enquire about fit, availability and delivery.</p>
+  </section>
+</Layout>
+<script src="../../scripts/catalogue.ts"></script>

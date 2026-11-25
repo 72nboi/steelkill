@@ -1,0 +1,28 @@
+---
+import { products, price, site, type Product } from '../lib/catalog';
+interface Props { product?: Product; }
+const { product } = Astro.props;
+---
+<form class="enquiry-form" data-enquiry-form>
+  <label for="enquiry-product">Your piece</label>
+  <select id="enquiry-product" name="product"><option value="custom">A custom idea / general enquiry</option>{products.map(item => <option value={item.id} selected={product?.id === item.id}>{item.name} — {price(item.price)}</option>)}</select>
+  <label for="enquiry-message">Your message <span>(optional)</span></label><textarea id="enquiry-message" name="message" rows="4" maxlength="2000" placeholder="Sizing, a question about the piece, or something you have in mind…"></textarea>
+  <div class="actions"><button type="submit" class="button button-light">Copy enquiry</button><a class="button button-outline" href={site.instagram} target="_blank" rel="noopener noreferrer">Open Instagram</a></div>
+  <p class="form-note" data-enquiry-status role="status">Copy your enquiry, then paste it into an Instagram message to @steel_kill_. Nothing is sent automatically.</p>
+</form>
+<script>
+  document.querySelectorAll<HTMLFormElement>('[data-enquiry-form]').forEach(form => {
+    const select = form.querySelector<HTMLSelectElement>('select')!;
+    const message = form.querySelector<HTMLTextAreaElement>('textarea')!;
+    const requested = new URLSearchParams(location.search).get('piece');
+    if (requested && [...select.options].some(option => option.value === requested)) select.value = requested;
+    form.addEventListener('submit', async event => {
+      event.preventDefault();
+      const piece = select.selectedOptions[0].text.split(' — ')[0];
+      const text = `Hi SteelKill! ${select.value === 'custom' ? "I'd like to ask about a custom idea." : `I'm interested in the ${piece}. Could you confirm sizing, availability and delivery?`}${message.value.trim() ? '\n\n' + message.value.trim() : ''}`;
+      const status = form.querySelector<HTMLElement>('[data-enquiry-status]')!;
+      try { await navigator.clipboard.writeText(text); status.textContent = 'Copied. Open Instagram and paste your enquiry into a message to @steel_kill_.'; }
+      catch { message.value = text; message.focus(); message.select(); status.textContent = 'Please copy the selected message, then paste it into Instagram.'; }
+    });
+  });
+</script>

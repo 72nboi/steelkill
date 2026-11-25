@@ -7,3 +7,11 @@ build-product/
 dist/
 package-lock.json
 .astro/
+
+# Local Instagram download state and credentials
+.instaloader*
+session-*
+*.cookies
+public/images/instagram/*.json.xz
+__pycache__/
+public/images/optimized/

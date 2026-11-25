@@ -1,0 +1,40 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Photo from '../../components/Photo.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import Enquiry from '../../components/Enquiry.astro';
+import { products, price, photo, url, type Product } from '../../lib/catalog';
+export function getStaticPaths() { return products.map(product => ({ params: { id: product.id }, props: { product } })); }
+interface Props { product: Product; }
+const { product } = Astro.props;
+const images = [product.image, ...(product.images || [])];
+const related = products.filter(item => item.id !== product.id && item.category === product.category).slice(0, 3);
+---
+<Layout title={product.name} description={product.description}>
+  <div class="section detail-section" id="top"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href={url()}>Home</a><span>/</span><a href={url('products/')}>The collection</a><span>/</span><span>{product.name}</span></nav>
+    <div class="product-detail">
+      <div class="product-gallery"><button class="main-photo" type="button" data-zoom aria-label={`Enlarge photo of ${product.name}`}><Photo src={product.image} alt={product.name} sizes="(max-width: 800px) 100vw, 55vw" eager/><span>View full photo +</span></button>
+        {images.length > 1 && <div class="thumbnails" role="group" aria-label="Product photos">{images.map((image, i) => <button type="button" class="thumbnail" data-gallery-src={photo(image, 1600)} data-gallery-srcset={`${photo(image, 480)} 480w, ${photo(image, 960)} 960w, ${photo(image, 1600)} 1600w`} aria-pressed={i === 0 ? 'true' : 'false'} aria-label={`Show photo ${i + 1} of ${product.name}`}><Photo src={image} alt="" sizes="90px"/></button>)}</div>}
+      </div>
+      <div class="product-information"><p class="eyebrow">{product.category} / STEELKILL</p><h1>{product.name}</h1><p class="detail-price">{price(product.price)}{product.price !== null && <span>GBP</span>}</p><p class="product-description">{product.description}</p><p class="availability-note">Enquire for current availability, sizing and shipping.</p><a class="button button-light" href="#enquire">Enquire about this piece</a><div class="product-accordions"><details open><summary>The details</summary><p>Explore the photographs for the design and finish. Confirm measurements, materials and fit with SteelKill before ordering.</p>{product.category === 'Bone pieces' && <p>This design includes real animal bone. Ask about the materials and the individual piece shown.</p>}</details><details><summary>Ordering & delivery</summary><p>Orders start with a conversation. Message us on Instagram to confirm your piece, its fit, the current price and delivery options. Prices are in British pounds; shipping is confirmed separately.</p></details><details><summary>Care for your piece</summary><p>Store dry and separate from other jewellery. Wipe steel components gently with a soft cloth. Keep bone details dry, and ask for care instructions specific to your piece.</p></details></div></div>
+    </div>
+  </div>
+  <section class="section enquiry-section" id="enquire"><div><p class="eyebrow">MAKE IT YOURS</p><h2>A conversation<br/><em>starts here.</em></h2><p>Ask about this piece, check your size,<br/>or tell us what you have in mind.</p></div><Enquiry product={product}/></section>
+  {related.length > 0 && <section class="section related"><div class="section-heading"><div><p class="eyebrow">MORE OF YOUR KIND</p><h2>Keep <em>exploring.</em></h2></div><a class="underlined" href={url('products/')}>The full collection</a></div><div class="product-grid">{related.map(item => <ProductCard product={item}/>)}</div></section>}
+  <dialog class="lightbox" aria-label={`Full photo of ${product.name}`}><button type="button" class="lightbox-close">Close ×</button><img src={photo(product.image, 1600)} alt={product.name}/></dialog>
+</Layout>
+<script>
+  const mainButton = document.querySelector<HTMLButtonElement>('[data-zoom]');
+  const dialog = document.querySelector<HTMLDialogElement>('.lightbox');
+  if (mainButton && dialog) {
+    const image = mainButton.querySelector('img')!;
+    document.querySelectorAll<HTMLButtonElement>('[data-gallery-src]').forEach(button => button.addEventListener('click', () => {
+      image.src = button.dataset.gallerySrc!;
+      image.srcset = button.dataset.gallerySrcset!;
+      document.querySelectorAll('[data-gallery-src]').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+    }));
+    mainButton.addEventListener('click', () => { dialog.querySelector('img')!.src = image.currentSrc || image.src; dialog.showModal(); });
+    dialog.querySelector('button')!.addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
+  }
+</script>

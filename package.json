@@ -1,16 +1,22 @@
 {
-  "name": "@example/basics",
+  "name": "steelkill",
   "type": "module",
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "predev": "node scripts/prepare-site-assets.mjs",
     "dev": "astro dev",
+    "prestart": "node scripts/prepare-site-assets.mjs",
     "start": "astro dev",
+    "prebuild": "node scripts/prepare-site-assets.mjs",
     "build": "astro build",
+    "postbuild": "node scripts/finalize-site.mjs",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "validate:catalog": "node scripts/validate-catalog.mjs"
   },
   "dependencies": {
+    "sharp": "^0.34.5",
     "@astrojs/react": "^4.2.2",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",

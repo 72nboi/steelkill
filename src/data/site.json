@@ -1,0 +1,33 @@
+{
+  "instagram": "https://www.instagram.com/steel_kill_/",
+  "logo": "/images/instagram/2026-04-11_DXAACNAjYVb9184Ghyl6acg7TiIwXqHAcdvuak0_14.webp",
+  "hero": "/images/instagram/2026-06-12_DZf57utkQgf_2.jpg",
+  "editorial": "/images/instagram/2026-05-13_DYSYQ9JjeiG_5.jpg",
+  "detail": "/images/instagram/2025-03-21_DHdDOiYsQ8__1.jpg",
+  "lookbook": [
+    "/images/instagram/2026-06-12_DZf57utkQgf_1.jpg",
+    "/images/instagram/2026-06-12_DZf57utkQgf_3.jpg",
+    "/images/instagram/2025-03-23_DHjekwly7Nk_1.jpg",
+    "/images/instagram/2025-02-01_DFis66oI8hb_6.webp"
+  ],
+  "edits": [
+    {
+      "title": "Necklaces",
+      "subtitle": "The statement starts here.",
+      "image": "/images/instagram/2025-03-21_DHdDOiYsQ8__1.jpg",
+      "category": "Necklaces"
+    },
+    {
+      "title": "Chokers",
+      "subtitle": "Keep your armour close.",
+      "image": "/images/instagram/2025-03-24_DHkxirbscPF_1.jpg",
+      "category": "Chokers"
+    },
+    {
+      "title": "Bone pieces",
+      "subtitle": "A darker kind of natural.",
+      "image": "/images/instagram/2025-07-13_DMClyK6MUqB_1.jpg",
+      "category": "Bone pieces"
+    }
+  ]
+}

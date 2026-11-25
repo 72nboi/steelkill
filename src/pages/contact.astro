@@ -1,0 +1,11 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Enquiry from '../components/Enquiry.astro';
+import Photo from '../components/Photo.astro';
+import { site } from '../lib/catalog';
+---
+<Layout title="Contact & care">
+  <section class="section contact-head" id="top"><p class="eyebrow">LET’S TALK METAL</p><h1>Find your<br/><em>kind of piece.</em></h1><p>A piece you love. An idea you have. A question about fit.<br/>Start a conversation with SteelKill.</p></section>
+  <section class="section contact-content"><div><h2>Say <em>hello.</em></h2><p>Send your enquiry to <a class="underlined" href={site.instagram} target="_blank" rel="noopener noreferrer">@steel_kill_</a> on Instagram.</p><Enquiry/></div><Photo src={site.detail} alt="Close detail of interlocking SteelKill chainmail and spikes" class="contact-photo" sizes="(max-width: 800px) 100vw, 45vw"/></section>
+  <section class="section care-section"><div><p class="eyebrow">GOOD TO KNOW</p><h2>The finer<br/><em>details.</em></h2></div><div class="faq"><details><summary>How do I order?</summary><p>Choose your piece and send us a message on Instagram. We’ll confirm availability, the price, measurements and delivery before you order.</p></details><details><summary>What currency are the prices in?</summary><p>All prices are in British pounds (GBP / £). Shipping is confirmed separately when you enquire.</p></details><details><summary>Can I ask about a custom design?</summary><p>Of course. Share your idea and any reference pictures, and we’ll discuss what’s possible.</p></details><details><summary>How do I choose a size?</summary><p>Share your neck or wrist measurement and the name of your chosen piece. Tell us if you prefer a close or relaxed fit so we can discuss the options.</p></details><details><summary>How should I care for my jewellery?</summary><p>Keep your piece dry, store it separately and wipe steel components with a soft cloth. Bone details need gentle handling and should be kept away from water. Ask us for care instructions for your particular design.</p></details></div></section>
+</Layout>

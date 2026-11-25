@@ -1,0 +1,14 @@
+---
+import Photo from './Photo.astro';
+import { price, url, type Product } from '../lib/catalog';
+interface Props { product: Product; }
+const { product } = Astro.props;
+---
+<article class="product-card" data-product data-category={product.category} data-name={`${product.name} ${product.description}`} data-price={product.price ?? ''}>
+  <a href={url(`products/${product.id}/`)} class="product-photo" aria-label={`View ${product.name}`}>
+    <Photo src={product.image} alt={product.name} sizes="(max-width: 650px) 90vw, (max-width: 1000px) 46vw, 30vw" />
+    <span class="product-category">{product.category}</span>
+    <span class="photo-action">Discover piece <span aria-hidden="true">+</span></span>
+  </a>
+  <div class="product-caption"><h3><a href={url(`products/${product.id}/`)}>{product.name}</a></h3><p>{price(product.price)}</p></div>
+</article>

@@ -1,94 +1,83 @@
-# Welcome to [Astro Ecommerce](https://www.creative-tim.com/astro)
+# SteelKill
 
-![version](https://img.shields.io/badge/version-1.1.0-blue.svg) [![GitHub issues open](https://img.shields.io/github/issues/creativetimofficial/astro-ecommerce.svg?maxAge=2592000)](https://github.com/creativetimofficial/astro-ecommerce/issues?q=is%3Aopen+is%3Aissue) [![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/creativetimofficial/astro-ecommerce.svg?maxAge=2592000)](https://github.com/creativetimofficial/astro-ecommerce/issues?q=is%3Aissue+is%3Aclosed)
+Astro website for SteelKill handmade chainmail jewellery. The homepage, collection, product detail pages, contact page and photo choices are driven by local JSON. Original Instagram photos are retained for editing; only curated, optimised photos are included in a production build.
 
-![basics](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/astro-ecommerce/astro-ecommerce-1.jpg)
+## Run and build
 
-## Description
-
-Introducing **Astro Ecommerce**, the ultimate starter template for your e-commerce web project. Built on Astro's next-gen island architecture, Astro Ecommerce offers a sleek and modern design with a wide range of components and features to help you create a stunning online store.
-
-**Main Features**
-Build your e-commerce website quickly and efficiently with:
-- 70+ fully coded elements
-- 3 fully coded example pages
-- 30+ blocks
-- Responsive design
-
-**Example Pages**
-We created a set of pre-built pages to help you get inspired or show something to your clients. See them below:
-- [Landing Page](https://demos.creative-tim.com/astro-ecommerce/landing/): Designed to introduce the website's purpose and encourage the user to take an action.
-- [Product Page](https://demos.creative-tim.com/astro-ecommerce/product/): It's designed to give the user all the information they need to make a purchase decision
-- [Shopping Page](https://demos.creative-tim.com/astro-ecommerce/shopping-cart/): Includes a summary of the items in the cart and a form for billing and shipping information.
-- more+
-
-Astro Ecommerce has everything you need to create the e-commerce website of your dreams.
-
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   ├── cart/
-│   │   ├── checkout/
-│   │   ├── incentives/
-│   │   ├── order/
-│   │   ├── products/
-│   │   ├── promo/
-│   │   ├── reviews/
-│   │   ├── store/
-│   │   ├── dashboardContext.tsx
-│   │   ├── footer.tsx
-│   │   └── navbar.tsx
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       ├── index.astro
-│       ├── landing.astro
-│       ├── product.astro
-│       └── shopping-cart.astro
-├── package.json
-├── README.md
-└── tsconfig.json
+```powershell
+npm install
+npm run dev
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Open the localhost URL printed by Astro. `npm run build` creates the production site in `dist/`. `npm run preview` serves that build. Image preparation runs automatically before development and production builds. Repeat the build after editing JSON for a published site; the development server reloads JSON edits. No database or CMS is required.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Edit the products
 
-Any static assets, like images, can be placed in the `public/` directory.
+Edit **src/data/products.json**. `currency` is `GBP`, and `price` is in **pounds**, not pence. `79` displays as `£79.00`. Every product card, category filter, enquiry selector and product page comes from this file.
 
-## 🧞 Commands
+```json
+{
+  "currency": "GBP",
+  "products": [
+    {
+      "id": "soft-edges",
+      "name": "Soft Edges Choker",
+      "description": "Rounded clusters of steel rings form a softer silhouette.",
+      "price": 79,
+      "category": "Chokers",
+      "image": "/images/instagram/2025-03-23_DHiM2sSs27-_1.jpg",
+      "images": ["/images/instagram/2025-03-23_DHiM2sSs27-_2.jpg"],
+      "featured": true
+    }
+  ]
+}
+```
 
-All commands are run from the root of the project, from a terminal:
+- `id`: unique lowercase URL slug, e.g. `/products/soft-edges/`.
+- `name`, `description`: displayed on cards and/or the product page.
+- `price`: a positive number in GBP, or `null` for “Price on enquiry”.
+- `category`: a category name; filters are generated automatically from the data.
+- `image`: main image, relative to `public/` and beginning with `/images/`.
+- `images`: optional alternate images of the **same piece**.
+- `featured`: optional boolean. Up to six featured pieces appear on the homepage.
+- `priceSource`, `editorNote`: optional editor references, never rendered to customers.
 
-| Command                | Action                                             |
-| :--------------------- | :------------------------------------------------- |
-| `npm install`          | Installs dependencies                              |
-| `npm run dev`          | Starts local dev server at `localhost:3000`        |
-| `npm run build`        | Build your production site to `./dist/`            |
-| `npm run preview`      | Preview your build locally, before deploying       |
-| `npm run astro ...`    | Run CLI commands like `astro add`, `astro preview` |
-| `npm run astro --help` | Get help using the Astro CLI                       |
+To add a product, add an object and its photos. To remove one, remove its object and rebuild. New categories and product detail pages are generated automatically. Search matches names and descriptions; categories, sorting and search can be combined. Unpriced pieces stay last when sorting by price.
 
-#### Social Media
+The initial catalogue contains 18 pieces curated from the downloaded photos. Names/prices were transcribed from the product posts where readable; otherwise descriptive display names are marked in `editorNote`. The gold Persian bracelet is unpriced because its source photo shows both £65 and £45. Confirm the current price and replace `null` when ready. Photo listings do not establish current stock or shipping costs; enquiries confirm these before ordering.
 
-Twitter: <https://twitter.com/CreativeTim>
+Run `npm run validate:catalog` to check required fields, unique slugs, valid prices and image paths. The same validation runs before every build. Invalid data stops the build with a product-specific error.
 
-Facebook: <https://www.facebook.com/CreativeTim>
+## Edit homepage images
 
-Dribbble: <https://dribbble.com/creativetim>
+Edit **src/data/site.json** for the homepage hero, logo, editorial image, lookbook, category tiles and Instagram link. Selected originals are converted into responsive WebP files in `public/images/optimized/` using Sharp. Downloaded originals are never overwritten. Production builds exclude the uncurated Instagram download directory so personal pictures and unrelated event posts are not published as loose assets. Keep product/site image paths inside the curated JSON files.
 
-TikTok: <https://tiktok.com/@creative.tim>
+## Enquiries
 
-Instagram: <https://instagram.com/creativetimofficial>
+Product pages and the contact page provide a “Copy enquiry” composer and Instagram link. The site sends nothing automatically and has no payment integration. A failed clipboard write selects the enquiry text for manual copying. Add real payment/checkout links only after confirming the buying workflow.
 
-## 👀 Want to learn more?
+## Instagram downloader
 
-Feel free to check [our documentation](https://www.creative-tim.com/learning-lab/astro/overview/astro-ecommerce) or jump into our [Discord server](https://discord.com/invite/TGZqBvZB).
+Sign into Instagram in Firefox and complete verification, then run:
+
+```powershell
+.\downlider.ps1 -Browser firefox
+```
+
+Alternatively, use an actual Instagram username, not an email:
+
+```powershell
+.\downlider.ps1 -LoginUser your_instagram_username
+```
+
+Keep `scripts/instaloader_compat.py` alongside the PowerShell script. It applies a process-local workaround for Instaloader's retired login query (upstream #2792 / #2795), leaving installed packages unchanged. A valid signed-in session is still required.
+
+Chrome and Edge are supported, though cookie encryption may prevent import. Use `-CookieFile` with the correct profile database if several browser profiles exist. PATH warnings for pip command-line scripts do not affect this script.
+
+Other options: `-FullDownload` ignores timestamps, `-UpdateInstaloader` updates dependencies, `-Anonymous` explicitly attempts anonymous access, and `-SessionFile` selects a session file with `-LoginUser`. Never put session/cookie files inside `public/`.
+
+New downloads are not automatically products: select product photos and add them to the JSON to keep posters, duplicates and personal images out of the catalogue.
+
+## Hosting
+
+The default base path is `/`. The existing GitHub Pages workflow sets `BASE_PATH` from the repository name. For manual project-path hosting, build with `BASE_PATH=/steelkill/` (or the desired path). Product routes, links, responsive images and redirects respect the base path. Use `npm run build` so the image preparation and production cleanup hooks run.
