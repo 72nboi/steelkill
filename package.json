@@ -13,7 +13,8 @@
     "postbuild": "node scripts/finalize-site.mjs",
     "preview": "astro preview",
     "astro": "astro",
-    "validate:catalog": "node scripts/validate-catalog.mjs"
+    "validate:catalog": "node scripts/validate-catalog.mjs",
+    "test:institute": "node --test scripts/test-institute.mjs"
   },
   "dependencies": {
     "sharp": "^0.34.5",

@@ -81,3 +81,11 @@ New downloads are not automatically products: select product photos and add them
 ## Hosting
 
 The default base path is `/`. The existing GitHub Pages workflow sets `BASE_PATH` from the repository name. For manual project-path hosting, build with `BASE_PATH=/steelkill/` (or the desired path). Product routes, links, responsive images and redirects respect the base path. Use `npm run build` so the image preparation and production cleanup hooks run.
+
+## Hidden institute game
+
+`/noahindainstitute/` is an unlisted, noindex HTML5 raycasting escape game. It has its own layout and is not linked from the shop. WASD moves, arrows turn, mouse-look is optional, Shift sprints, C sneaks, M toggles an explored floorplan, and P/Escape pauses. Touch buttons and drag-to-look are supported. Sound is opt-in.
+
+Noah patrols and pursues the player using walkable maze paths. Contact loses the run; the exit reveals `noahindainstitute` only after a successful escape. This is a client-side Easter egg, not access control for a secret voucher. Configure that promotion and its discount amount in the eventual payment provider before advertising it as redeemable.
+
+Logic: `src/games/institute/engine.js`. Rendering: `renderer.js`. Controls/reward UI: `main.js`. Hidden page: `src/pages/noahindainstitute.astro`. The game sprite is `public/images/institute/noah.webp`, with its source artwork retained in `assets/institute/`. Run `npm run test:institute` for movement, AI, pause, loss, escape and full-run regression checks.
