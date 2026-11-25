@@ -16,14 +16,14 @@ const active = (name: string) => path.includes(`/${name}`);
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
-    <div class="announcement">HANDMADE CHAINMAIL JEWELLERY <span>FOR THE BEAUTIFULLY UNCONVENTIONAL</span></div>
+    <div class="announcement">HANDMADE CHAINMAIL JEWELLERY <span>FOR THE DARK AT HEART</span></div>
     <header class="site-header">
       <a class="brand" href={url()} aria-label="SteelKill home"><img src={url('images/optimized/steelkill-logo.webp')} width="180" height="105" alt="SteelKill"/></a>
       <nav aria-label="Main navigation"><a href={url('products/')} aria-current={active('products') ? 'page' : undefined}>The collection</a><a href={`${url()}#our-world`}>Our world</a><a href={url('contact/')} aria-current={active('contact') ? 'page' : undefined}>Get in touch</a></nav>
       <a class="header-instagram" href={site.instagram} target="_blank" rel="noopener noreferrer" aria-label="SteelKill on Instagram"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg></a>
     </header>
     <main id="main"><slot/></main>
-    <section class="footer-callout"><p>Made of metal. Made for you.</p><a class="button button-outline" href={url('contact/')}>Talk to SteelKill</a></section>
-    <footer class="site-footer"><a class="footer-logo" href={url()} aria-label="SteelKill home"><img src={url('images/optimized/steelkill-logo.webp')} width="240" height="140" alt="SteelKill" loading="lazy"/></a><div><p class="eyebrow">JEWELLERY WITH A DARKER SIDE.</p><p>Chainmail. Spikes. Unapologetic self-expression.</p></div><div class="footer-links"><a href={url('products/')}>The collection</a><a href={url('contact/')}>Contact & care</a><a href={site.instagram} target="_blank" rel="noopener noreferrer">Instagram</a></div><div class="footer-bottom"><span>© {new Date().getFullYear()} SteelKill</span><span>Prices in GBP (£). Shipping confirmed on enquiry.</span><a href="#top" id="back-to-top">Back to top</a></div></footer>
+    <section class="footer-callout"><p>Feel The Steel</p><a class="button button-outline" href={url('contact/')}>Talk to SteelKill</a></section>
+    <footer class="site-footer"><a class="footer-logo" href={url()} aria-label="SteelKill home"><img src={url('images/optimized/steelkill-logo.webp')} width="240" height="140" alt="SteelKill" loading="lazy"/></a><div><p class="eyebrow">STEEL. BONE. NO MERCY.</p><p>Heavy metal. Dark intentions.</p></div><div class="footer-links"><a href={url('products/')}>The collection</a><a href={url('contact/')}>Contact & care</a><a href={site.instagram} target="_blank" rel="noopener noreferrer">Instagram</a></div><div class="footer-bottom"><span>© {new Date().getFullYear()} SteelKill</span><span>Prices in GBP (£). Shipping confirmed on enquiry.</span><a href="#top" id="back-to-top">Back to top</a></div></footer>
   </body>
 </html>
